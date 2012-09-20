@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by Magentix
- * Based on "Excellence Technologies" Module
+ * Based on Module from "Excellence Technologies" (excellencetechnologies.in)
  *
  * @category   Magentix
  * @package    Magentix_Fee

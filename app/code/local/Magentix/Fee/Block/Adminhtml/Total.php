@@ -9,12 +9,12 @@
  * @license    This work is free software, you can redistribute it and/or modify it
  */
 
-class Magentix_Fee_Block_Checkout_Total extends Mage_Checkout_Block_Total_Default
+class Magentix_Fee_Block_Adminhtml_Total extends Mage_Adminhtml_Block_Sales_Order_Create_Totals_Default
 {
     //protected $_template = 'fee/fee.phtml';
 
     /**
-     * Check if we need display both sobtotals
+     * Check if we need display both subtotals
      *
      * @return bool
      */

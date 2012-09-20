@@ -1,4 +1,15 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Created by Magentix
+ * Based on Module from "Excellence Technologies" (excellencetechnologies.in)
+ *
+ * @category   Magentix
+ * @package    Magentix_Fee
+ * @author     Matthieu Vion (http://www.magentix.fr)
+ * @license    This work is free software, you can redistribute it and/or modify it
+ */
+-->
 <config>
     <modules>
         <Magentix_Fee>
@@ -12,6 +23,7 @@
                     <fee>
                         <class>fee/sales_quote_address_total_fee</class>
                         <renderer>fee/checkout_total</renderer>
+                        <admin_renderer>fee/adminhtml_total</admin_renderer>
                     </fee>
                 </totals>
             </quote>
@@ -78,20 +90,6 @@
                 </fee>
             </totals>
         </pdf>
-        <models>
-            <fee>
-                <class>Magentix_Fee_Model</class>
-                <resourceModel>fee_mysql4</resourceModel>
-            </fee>
-            <fee_mysql4>
-                <class>Magentix_Fee_Model_Mysql4</class>
-                <entities>
-                    <fee>
-                        <table>fee</table>
-                    </fee>
-                </entities>
-            </fee_mysql4>
-        </models>
         <resources>
             <fee_setup>
                 <setup>
@@ -101,17 +99,12 @@
                     <use>core_setup</use>
                 </connection>
             </fee_setup>
-            <fee_write>
-                <connection>
-                    <use>core_write</use>
-                </connection>
-            </fee_write>
-            <fee_read>
-                <connection>
-                    <use>core_read</use>
-                </connection>
-            </fee_read>
         </resources>
+        <models>
+            <fee>
+                <class>Magentix_Fee_Model</class>
+            </fee>
+        </models>
         <blocks>
             <fee>
                 <class>Magentix_Fee_Block</class>

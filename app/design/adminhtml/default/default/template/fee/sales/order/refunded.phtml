@@ -1,3 +1,15 @@
+<?php
+/**
+ * Created by Magentix
+ * Based on Module from "Excellence Technologies" (excellencetechnologies.in)
+ *
+ * @category   Magentix
+ * @package    Magentix_Fee
+ * @author     Matthieu Vion (http://www.magentix.fr)
+ * @license    This work is free software, you can redistribute it and/or modify it
+ */
+?>
+
 <?php if($this->getSource() instanceof Mage_Sales_Model_Order): ?>
 
     <?php if ((float)$this->getSource()->getFeeAmountRefunded() > 0): ?>

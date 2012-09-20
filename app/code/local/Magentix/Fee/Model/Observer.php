@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by Magentix
- * Based on "Excellence Technologies" Module
+ * Based on Module from "Excellence Technologies" (excellencetechnologies.in)
  *
  * @category   Magentix
  * @package    Magentix_Fee
@@ -12,6 +12,12 @@
 class Magentix_Fee_Model_Observer
 {
 
+    /**
+     * Set fee amount invoiced to the order
+     *
+     * @param Varien_Event_Observer $observer
+     * @return Magentix_Fee_Model_Observer
+     */
     public function invoiceSaveAfter(Varien_Event_Observer $observer)
     {
         $invoice = $observer->getEvent()->getInvoice();
@@ -25,6 +31,12 @@ class Magentix_Fee_Model_Observer
         return $this;
     }
 
+    /**
+     * Set fee amount refunded to the order
+     *
+     * @param Varien_Event_Observer $observer
+     * @return Magentix_Fee_Model_Observer
+     */
     public function creditmemoSaveAfter(Varien_Event_Observer $observer)
     {
         $creditmemo = $observer->getEvent()->getCreditmemo();
@@ -38,10 +50,19 @@ class Magentix_Fee_Model_Observer
         return $this;
     }
 
-    public function updatePaypalTotal($evt)
+    /**
+     * Update PayPal Total
+     *
+     * @param Varien_Event_Observer $observer
+     * @return Magentix_Fee_Model_Observer
+     */
+    public function updatePaypalTotal(Varien_Event_Observer $observer)
     {
-        $cart = $evt->getPaypalCart();
+        $cart = $observer->getEvent()->getPaypalCart();
+
         $cart->updateTotal(Mage_Paypal_Model_Cart::TOTAL_SUBTOTAL, $cart->getSalesEntity()->getFeeAmount());
+
+        return $this;
     }
 
 }

@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by Magentix
- * Based on "Excellence Technologies" Module
+ * Based on Module from "Excellence Technologies" (excellencetechnologies.in)
  *
  * @category   Magentix
  * @package    Magentix_Fee
@@ -12,10 +12,16 @@
 class Magentix_Fee_Model_Fee extends Varien_Object
 {
 
+    /**
+     * Fee Amount
+     *
+     * @var int
+     */
     const FEE_AMOUNT = 20;
 
     /**
      * Retrieve Fee Amount
+     *
      * @static
      * @return int
      */
@@ -26,6 +32,7 @@ class Magentix_Fee_Model_Fee extends Varien_Object
 
     /**
      * Check if fee can be apply
+     *
      * @static
      * @param Mage_Sales_Model_Quote_Address $address
      * @return bool

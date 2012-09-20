@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by Magentix
- * Based on "Excellence Technologies" Module
+ * Based on Module from "Excellence Technologies" (excellencetechnologies.in)
  *
  * @category   Magentix
  * @package    Magentix_Fee
@@ -11,8 +11,15 @@
 
 class Magentix_Fee_Model_Sales_Quote_Address_Total_Fee extends Mage_Sales_Model_Quote_Address_Total_Abstract
 {
+
     protected $_code = 'fee';
 
+    /**
+     * Collect fee address amount
+     *
+     * @param Mage_Sales_Model_Quote_Address $address
+     * @return Magentix_Fee_Model_Sales_Quote_Address_Total_Fee
+     */
     public function collect(Mage_Sales_Model_Quote_Address $address)
     {
         parent::collect($address);
@@ -40,15 +47,23 @@ class Magentix_Fee_Model_Sales_Quote_Address_Total_Fee extends Mage_Sales_Model_
             $address->setGrandTotal($address->getGrandTotal() + $address->getFeeAmount());
             $address->setBaseGrandTotal($address->getBaseGrandTotal() + $address->getBaseFeeAmount());
         }
+
+        return $this;
     }
 
+    /**
+     * Add fee information to address
+     *
+     * @param Mage_Sales_Model_Quote_Address $address
+     * @return Magentix_Fee_Model_Sales_Quote_Address_Total_Fee
+     */
     public function fetch(Mage_Sales_Model_Quote_Address $address)
     {
-        $amt = $address->getFeeAmount();
+        $amount = $address->getFeeAmount();
         $address->addTotal(array(
             'code' => $this->getCode(),
             'title' => Mage::helper('fee')->__('Fee'),
-            'value' => $amt
+            'value' => $amount
         ));
         return $this;
     }
