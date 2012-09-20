@@ -40,4 +40,4 @@ public static function canApply($address)
 Screenshot
 ----------
 
-[Magentix Fee](https://github.com/magentix/Fee/tree/master/screenshots/magento_fee.png)
+![Magentix Fee](https://github.com/magentix/Fee/tree/master/screenshots/magento_fee.png "Magentix Fee")
