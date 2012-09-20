@@ -41,3 +41,4 @@ Screenshot
 ----------
 
 ![Magentix Fee](https://github.com/magentix/Fee/tree/master/screenshots/magento_fee.png "Magentix Fee")
+[Magentix Fee](https://github.com/magentix/Fee/tree/master/screenshots/magento_fee.png)
