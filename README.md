@@ -35,6 +35,50 @@ public static function canApply($address)
 }
 ```
 
+Example : Apply 5$ fee if Shipping Address is outside France :
+
+
+```
+class Magentix_Fee_Model_Fee extends Varien_Object
+{
+
+    /**
+     * Fee Amount
+     *
+     * @var int
+     */
+    const FEE_AMOUNT = 5;
+
+    /**
+     * Retrieve Fee Amount
+     *
+     * @static
+     * @return int
+     */
+    public static function getFee()
+    {
+        return self::FEE_AMOUNT;
+    }
+
+    /**
+     * Check if fee can be apply
+     *
+     * @static
+     * @param Mage_Sales_Model_Quote_Address $address
+     * @return bool
+     */
+    public static function canApply($address)
+    {
+        if($address->getAddressType() == 'shipping' && $address->getCountryId() != 'FR') {
+            return true;
+        }
+
+        return false;
+    }
+
+}
+
+```
 
 
 Screenshot
