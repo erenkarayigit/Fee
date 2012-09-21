@@ -22,8 +22,8 @@
                 <totals>
                     <fee>
                         <class>fee/sales_quote_address_total_fee</class>
-                        <renderer>fee/checkout_total</renderer>
-                        <admin_renderer>fee/adminhtml_total</admin_renderer>
+                        <renderer>fee/checkout_totals_fee</renderer>
+                        <admin_renderer>fee/adminhtml_sales_order_create_totals_fee</admin_renderer>
                     </fee>
                 </totals>
             </quote>
@@ -116,6 +116,15 @@
             </fee>
         </helpers>
     </global>
+    <frontend>
+        <layout>
+            <updates>
+                <fee>
+                    <file>fee.xml</file>
+                </fee>
+            </updates>
+        </layout>
+    </frontend>
     <adminhtml>
         <layout>
             <updates>
