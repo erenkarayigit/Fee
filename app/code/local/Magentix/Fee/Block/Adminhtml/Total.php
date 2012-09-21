@@ -11,15 +11,9 @@
 
 class Magentix_Fee_Block_Adminhtml_Total extends Mage_Adminhtml_Block_Sales_Order_Create_Totals_Default
 {
-    //protected $_template = 'fee/fee.phtml';
-
     /**
-     * Check if we need display both subtotals
-     *
-     * @return bool
+     * Use your own template if necessary
+     * See "sales/order/create/totals/default.phtml" for model
      */
-    public function displayBoth()
-    {
-        return Mage::getSingleton('tax/config')->displayCartSubtotalBoth();
-    }
+    // protected $_template = 'fee/fee.phtml';
 }

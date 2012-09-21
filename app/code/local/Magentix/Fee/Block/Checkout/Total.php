@@ -11,15 +11,9 @@
 
 class Magentix_Fee_Block_Checkout_Total extends Mage_Checkout_Block_Total_Default
 {
-    //protected $_template = 'fee/fee.phtml';
-
     /**
-     * Check if we need display both sobtotals
-     *
-     * @return bool
+     * Use your own template if necessary
+     * See "checkout/total/default.phtml" for model
      */
-    public function displayBoth()
-    {
-        return Mage::getSingleton('tax/config')->displayCartSubtotalBoth();
-    }
+    // protected $_template = 'fee/fee.phtml';
 }
