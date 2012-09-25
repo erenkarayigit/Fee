@@ -39,7 +39,14 @@ class Magentix_Fee_Model_Fee extends Varien_Object
      */
     public static function canApply($address)
     {
-        //put here your business logic to check if fee should be applied or not
+        // Put here your business logic to check if fee should be applied or not
+
+        // Example of data retrieved :
+        // $address->getShippingMethod(); > flatrate_flatrate
+        // $address->getQuote()->getPayment()->getMethod(); > checkmo
+        // $address->getCountryId(); > US
+        // $address->getQuote()->getCouponCode(); > COUPONCODE
+
         return true;
     }
 
